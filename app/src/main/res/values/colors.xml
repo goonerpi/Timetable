@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#F9F9F9</color>
+    <color name="colorPrimaryDark">#43515C</color>
+    <color name="colorSubText">#A6A9AA</color>
+    <color name="colorEndTimeBackground">#828A8E</color>
+    <color name="colorAccent">#BB86FC</color>
+    <color name="colorLecture">#1de9b6</color>
+    <color name="colorLab">#BB86FC</color>
+    <color name="colorPractice">#C51162</color>
+    <color name="colorBackground">#DFE1E2</color>
+</resources>
