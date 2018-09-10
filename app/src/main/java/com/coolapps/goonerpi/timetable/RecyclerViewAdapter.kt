@@ -1,12 +1,17 @@
 package com.coolapps.goonerpi.timetable
 
+import android.support.design.widget.Snackbar
 import android.support.v4.content.ContextCompat
 import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
+import android.widget.ImageView
+import android.widget.TextView
 import com.coolapps.goonerpi.timetable.model.Lesson
+import com.coolapps.goonerpi.timetable.utils.TeacherImageManager
 import kotlinx.android.synthetic.main.new_list_item.view.*
 
 class RecyclerViewAdapter(private val lessons: List<Lesson>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -26,9 +31,9 @@ class RecyclerViewAdapter(private val lessons: List<Lesson>) : RecyclerView.Adap
     }
 
 
-
     class LessonHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun bind(lesson: Lesson) {
+
+        fun bind(lesson: Lesson) = with(lesson) {
             itemView.name.text = lesson.name.lessonNameShort
             itemView.spot.text = lesson.spot.spotName
             itemView.time_start.text = lesson.timeStart.time
@@ -38,6 +43,53 @@ class RecyclerViewAdapter(private val lessons: List<Lesson>) : RecyclerView.Adap
                 "Практика" -> ContextCompat.getDrawable(itemView.context, R.color.colorPractice)
                 "Лабораторная работа" -> ContextCompat.getDrawable(itemView.context, R.color.colorLab)
                 else -> ContextCompat.getDrawable(itemView.context, R.color.colorPrimary)
+            }
+            itemView.setOnClickListener {
+
+                val snackbar = Snackbar.make(it, "", 4000)
+
+                val layout = snackbar.view as Snackbar.SnackbarLayout
+
+                val textView = layout.findViewById<View>(android.support.design.R.id.snackbar_text) as TextView
+                textView.visibility = View.INVISIBLE
+
+
+                val mInflater = LayoutInflater.from(itemView.context)
+                val snackView = mInflater.inflate(R.layout.popup_window, null)
+
+                val imageView = snackView.findViewById(R.id.teacher_photo) as ImageView
+                val textViewTop = snackView.findViewById(R.id.teacher_name) as TextView
+                val textViewBottom = snackView.findViewById(R.id.lesson_fullname) as TextView
+                val dismissButton = snackView.findViewById(R.id.dismissButton) as ImageButton
+
+
+                snackbar.addCallback(object : Snackbar.Callback() {
+
+                    override fun onDismissed(snackbar: Snackbar?, event: Int) {
+                        super.onDismissed(snackbar, event)
+                        it.name.setTextColor(ContextCompat.getColor(it.context, R.color.colorPrimaryDark))
+                    }
+                })
+
+
+
+                dismissButton.setOnClickListener { snackbar.dismiss() }
+
+                //imageView.setImageBitmap(BitmapFactory.decodeResource(itemView.context.resources, R.drawable.ic_item_new))
+                textViewTop.text = lesson.teacher.teacherName
+                it.name.setTextColor(ContextCompat.getColor(it.context, R.color.colorAccent))
+                //  it.name.alpha = 1F
+                textViewBottom.text = lesson.name.lessonNameFull
+
+                TeacherImageManager.setImage(lesson, imageView)
+
+
+                layout.setPadding(0, 0, 0, 0)
+                layout.addView(snackView, 0)
+
+                snackbar.show()
+
+
             }
 
         }

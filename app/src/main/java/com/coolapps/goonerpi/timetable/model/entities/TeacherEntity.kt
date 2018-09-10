@@ -7,5 +7,6 @@ import android.arch.persistence.room.PrimaryKey
 data class TeacherEntity(
         @PrimaryKey
         val id: String,
-        val teacherName: String
+        val teacherName: String,
+        val photo: String
 )

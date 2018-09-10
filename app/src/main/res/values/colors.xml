@@ -4,7 +4,7 @@
     <color name="colorPrimaryDark">#43515C</color>
     <color name="colorSubText">#A6A9AA</color>
     <color name="colorEndTimeBackground">#828A8E</color>
-    <color name="colorAccent">#BB86FC</color>
+    <color name="colorAccent">#d32f2f</color>
     <color name="colorLecture">#1de9b6</color>
     <color name="colorLab">#BB86FC</color>
     <color name="colorPractice">#C51162</color>

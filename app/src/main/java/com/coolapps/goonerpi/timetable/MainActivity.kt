@@ -1,13 +1,10 @@
 package com.coolapps.goonerpi.timetable
 
 import android.os.Bundle
-import android.support.design.widget.Snackbar
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentPagerAdapter
 import android.support.v7.app.AppCompatActivity
-import android.view.Menu
-import android.view.MenuItem
 import com.coolapps.goonerpi.timetable.utils.StartItemManager
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -41,27 +38,6 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        menuInflater.inflate(R.menu.menu_main, menu)
-        return true
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        Snackbar.make(main_content, "Stepan Krasava!", Snackbar.LENGTH_LONG).show()
-        val id = item.itemId
-
-        if (id == R.id.action_settings) {
-            return true
-        }
-
-        return super.onOptionsItemSelected(item)
-    }
-
-
     /**
      * A [FragmentPagerAdapter] that returns a fragment corresponding to
      * one of the sections/tabs/pages.
@@ -72,7 +48,7 @@ class MainActivity : AppCompatActivity() {
         override fun getItem(position: Int): Fragment {
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class below).
-            return PlaceholderFragment.newInstance(position + 1)
+            return PlaceholderFragment.newInstance(position.rem(10) + 1)
         }
 
         override fun getCount(): Int {
@@ -82,6 +58,7 @@ class MainActivity : AppCompatActivity() {
         override fun getPageTitle(position: Int): CharSequence? {
             val pos = position.rem(5)
             val daysOfWeek = listOf("Понед.", "Вторник", "Среда", "Четверг", "Пятница")
+
             val week = when (position.rem(10)) {
                 in 0..4 -> " I"
                 else -> " II"

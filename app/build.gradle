@@ -27,13 +27,18 @@ android {
         generateStubs = true
     }
 
-    sourceSets { main { res.srcDirs = ['src/main/res'] } }
+    sourceSets {
+        main {
+            res.srcDirs = ['src/main/res']
+            assets.srcDirs =['src/main/assets', 'src/main/assets/']
+} }
 }
 
 dependencies {
     implementation "org.jetbrains.anko:anko-sqlite:$anko_version"
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'com.squareup.picasso:picasso:2.71828'
     implementation 'com.android.support:recyclerview-v7:28.0.0-rc02'
     implementation "android.arch.persistence.room:runtime:1.1.1"
     kapt "android.arch.persistence.room:compiler:1.1.1"

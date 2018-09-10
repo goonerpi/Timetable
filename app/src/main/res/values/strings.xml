@@ -3,4 +3,6 @@
     <string name="action_settings">Settings</string>
     <string name="section_format">Hello World from section: %1$d</string>
     <string name="spoticon">SpotIcon</string>
+    <string name="teacher">Преподаватель:</string>
+    <string name="lesson">Предмет:</string>
 </resources>

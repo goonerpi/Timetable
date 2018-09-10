@@ -11,7 +11,7 @@ object DbWriter {
     fun writeDataToDatabase() {
         doAsync {
             App.database = TimetableDatabase.getDatabase(App.applicationContext())!!
-            App.database.clearAllTables()
+
 
             if (App.database.nameDao().getAll().isEmpty()) {
                 val list = listOf(
@@ -47,14 +47,14 @@ object DbWriter {
             }
             if (App.database.teacherDao().getAll().isEmpty()) {
                 val list = listOf(
-                        TeacherEntity(randomUUID().toString(), "Жмуров Денис Борисович"),
-                        TeacherEntity(randomUUID().toString(), "Петряшин Антон Вениаминович"),
-                        TeacherEntity(randomUUID().toString(), "Федосеев Виктор Андреевич"),
-                        TeacherEntity(randomUUID().toString(), "Денисова Анна Юрьевна"),
-                        TeacherEntity(randomUUID().toString(), "Инюшкин Андрей Алексеевич"),
-                        TeacherEntity(randomUUID().toString(), "Кузнецов Андрей Владимирович"),
-                        TeacherEntity(randomUUID().toString(), "Мясников Владислав Валерьевич"),
-                        TeacherEntity(randomUUID().toString(), "Терентьев Валентин Андреевич")
+                        TeacherEntity(randomUUID().toString(), "Жмуров Денис Борисович", ""),
+                        TeacherEntity(randomUUID().toString(), "Петряшин Антон Вениаминович", ""),
+                        TeacherEntity(randomUUID().toString(), "Федосеев Виктор Андреевич", "file:///android_asset/fedoseev.jpeg"),
+                        TeacherEntity(randomUUID().toString(), "Денисова Анна Юрьевна", "file:///android_asset/denisova.jpg"),
+                        TeacherEntity(randomUUID().toString(), "Инюшкин Андрей Алексеевич", "file:///android_asset/inyushkin.jpeg"),
+                        TeacherEntity(randomUUID().toString(), "Кузнецов Андрей Владимирович", "file:///android_asset/kuznetsov.jpg"),
+                        TeacherEntity(randomUUID().toString(), "Мясников Владислав Валерьевич", "file:///android_asset/myasnikov.jpg"),
+                        TeacherEntity(randomUUID().toString(), "Терентьев Валентин Андреевич", "file:///android_asset/terentyev.jpeg")
                 )
                 App.database.teacherDao().insertList(list)
 

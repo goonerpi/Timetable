@@ -13,34 +13,7 @@ import kotlinx.android.synthetic.main.fragment_main.view.*
 class PlaceholderFragment : Fragment() {
 
 
-   /* var lessons: List<Lesson> = listOf(
-            Lesson(
-                    name = App.database.nameDao().findLessonByShortName("ПАСОИБ"),
-                    timeStart = App.database.timeDao().findTimeByName("9:45"),
-                    timeEnd = App.database.timeDao().findTimeByName("11:20"),
-                    teacher = App.database.teacherDao().findTeacherByName("Жмуров Денис Борисович"),
-                    type = App.database.typeDao().findTypeByName("Лекция"),
-                    spot = App.database.spotDao().findSpotByName("608-н.к.")),
-
-            Lesson(
-                    name = App.database.nameDao().findLessonByShortName("МПЗРС"),
-                    timeStart = App.database.timeDao().findTimeByName("11:30"),
-                    timeEnd = App.database.timeDao().findTimeByName("13:05"),
-                    teacher = App.database.teacherDao().findTeacherByName("Петряшин Антон Вениаминович"),
-                    type = App.database.typeDao().findTypeByName("Практика"),
-                    spot = App.database.spotDao().findSpotByName("608-н.к.")),
-
-            Lesson(
-                    name = App.database.nameDao().findLessonByShortName("МПЗРС"),
-                    timeStart = App.database.timeDao().findTimeByName("13:30"),
-                    timeEnd = App.database.timeDao().findTimeByName("15:05"),
-                    teacher = App.database.teacherDao().findTeacherByName("Петряшин Антон Вениаминович"),
-                    type = App.database.typeDao().findTypeByName("Лабораторная работа"),
-                    spot = App.database.spotDao().findSpotByName("608-н.к."))
-
-    )*/
     var lessons = DbDataManager.getData(App.database)
-
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,

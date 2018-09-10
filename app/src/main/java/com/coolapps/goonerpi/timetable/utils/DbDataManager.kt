@@ -22,29 +22,29 @@ class DbDataManager {
                             name = lessons.find { it -> it.lessonNameShort == "МПЗРС" }!!,
                             timeStart = times.find { it -> it.time == "11:30" }!!,
                             timeEnd = times.find { it -> it.time == "13:05" }!!,
-                            teacher = teachers.find { it -> it.teacherName == "Петряшин Антон Вениаминович" }!!,
-                            type = types.find { it -> it.type == "Практика" }!!,
+                            teacher = teachers.find { it -> it.teacherName == "Терентьев Валентин Андреевич" }!!,
+                            type = types.find { it -> it.type == "Лабораторная работа" }!!,
                             spot = spots.find { it -> it.spotName == "102а-3" }!!),
                     Lesson(
                             name = lessons.find { it -> it.lessonNameShort == "МПЗРС" }!!,
                             timeStart = times.find { it -> it.time == "13:30" }!!,
                             timeEnd = times.find { it -> it.time == "15:05" }!!,
-                            teacher = teachers.find { it -> it.teacherName == "Петряшин Антон Вениаминович" }!!,
-                            type = types.find { it -> it.type == "Практика" }!!,
+                            teacher = teachers.find { it -> it.teacherName == "Терентьев Валентин Андреевич" }!!,
+                            type = types.find { it -> it.type == "Лабораторная работа" }!!,
                             spot = spots.find { it -> it.spotName == "102а-3" }!!),
                     Lesson(
                             name = lessons.find { it -> it.lessonNameShort == "ТПЗРП" }!!,
                             timeStart = times.find { it -> it.time == "15:15" }!!,
                             timeEnd = times.find { it -> it.time == "16:50" }!!,
                             teacher = teachers.find { it -> it.teacherName == "Кузнецов Андрей Владимирович" }!!,
-                            type = types.find { it -> it.type == "Практика" }!!,
+                            type = types.find { it -> it.type == "Лабораторная работа" }!!,
                             spot = spots.find { it -> it.spotName == "610-н.к." }!!),
                     Lesson(
                             name = lessons.find { it -> it.lessonNameShort == "ТПЗРП" }!!,
                             timeStart = times.find { it -> it.time == "17:00" }!!,
                             timeEnd = times.find { it -> it.time == "18:35" }!!,
                             teacher = teachers.find { it -> it.teacherName == "Кузнецов Андрей Владимирович" }!!,
-                            type = types.find { it -> it.type == "Практика" }!!,
+                            type = types.find { it -> it.type == "Лабораторная работа" }!!,
                             spot = spots.find { it -> it.spotName == "610-н.к." }!!)
             )
 
@@ -60,7 +60,7 @@ class DbDataManager {
                             name = lessons.find { it -> it.lessonNameShort == "МПЗРС" }!!,
                             timeStart = times.find { it -> it.time == "9:45" }!!,
                             timeEnd = times.find { it -> it.time == "11:20" }!!,
-                            teacher = teachers.find { it -> it.teacherName == "Петряшин Антон Вениаминович" }!!,
+                            teacher = teachers.find { it -> it.teacherName == "Терентьев Валентин Андреевич" }!!,
                             type = types.find { it -> it.type == "Лекция" }!!,
                             spot = spots.find { it -> it.spotName == "608-н.к." }!!),
                     Lesson(
@@ -118,7 +118,7 @@ class DbDataManager {
                             name = lessons.find { it -> it.lessonNameShort == "РЭЗАС" }!!,
                             timeStart = times.find { it -> it.time == "8:00" }!!,
                             timeEnd = times.find { it -> it.time == "9:35" }!!,
-                            teacher = teachers.find { it -> it.teacherName == "Петряшин Антон Вениаминович" }!!,
+                            teacher = teachers.find { it -> it.teacherName == "Терентьев Валентин Андреевич" }!!,
                             type = types.find { it -> it.type == "Лекция" }!!,
                             spot = spots.find { it -> it.spotName == "201-н.к." }!!),
                     Lesson(
@@ -149,7 +149,7 @@ class DbDataManager {
                             name = lessons.find { it -> it.lessonNameShort == "МПЗРС" }!!,
                             timeStart = times.find { it -> it.time == "15:15" }!!,
                             timeEnd = times.find { it -> it.time == "16:50" }!!,
-                            teacher = teachers.find { it -> it.teacherName == "Петряшин Антон Вениаминович" }!!,
+                            teacher = teachers.find { it -> it.teacherName == "Терентьев Валентин Андреевич" }!!,
                             type = types.find { it -> it.type == "Лекция" }!!,
                             spot = spots.find { it -> it.spotName == "608-н.к." }!!),
                     Lesson(
@@ -166,14 +166,14 @@ class DbDataManager {
                             name = lessons.find { it -> it.lessonNameShort == "РЭЗАС" }!!,
                             timeStart = times.find { it -> it.time == "11:30" }!!,
                             timeEnd = times.find { it -> it.time == "13:05" }!!,
-                            teacher = teachers.find { it -> it.teacherName == "Петряшин Антон Вениаминович" }!!,
+                            teacher = teachers.find { it -> it.teacherName == "Терентьев Валентин Андреевич" }!!,
                             type = types.find { it -> it.type == "Лабораторная работа" }!!,
                             spot = spots.find { it -> it.spotName == "102а-3" }!!),
                     Lesson(
-                            name = lessons.find { it -> it.lessonNameShort == "ОПОИБ" }!!,
+                            name = lessons.find { it -> it.lessonNameShort == "РЭЗАС" }!!,
                             timeStart = times.find { it -> it.time == "13:30" }!!,
                             timeEnd = times.find { it -> it.time == "15:05" }!!,
-                            teacher = teachers.find { it -> it.teacherName == "Петряшин Антон Вениаминович" }!!,
+                            teacher = teachers.find { it -> it.teacherName == "Терентьев Валентин Андреевич" }!!,
                             type = types.find { it -> it.type == "Лабораторная работа" }!!,
                             spot = spots.find { it -> it.spotName == "102а-3" }!!)
             )
@@ -238,14 +238,14 @@ class DbDataManager {
                             name = lessons.find { it -> it.lessonNameShort == "РЭЗАС" }!!,
                             timeStart = times.find { it -> it.time == "9:45" }!!,
                             timeEnd = times.find { it -> it.time == "11:20" }!!,
-                            teacher = teachers.find { it -> it.teacherName == "Петряшин Антон Вениаминович" }!!,
+                            teacher = teachers.find { it -> it.teacherName == "Терентьев Валентин Андреевич" }!!,
                             type = types.find { it -> it.type == "Лекция" }!!,
                             spot = spots.find { it -> it.spotName == "608-н.к." }!!),
                     Lesson(
                             name = lessons.find { it -> it.lessonNameShort == "РЭЗАС" }!!,
                             timeStart = times.find { it -> it.time == "11:30" }!!,
                             timeEnd = times.find { it -> it.time == "13:05" }!!,
-                            teacher = teachers.find { it -> it.teacherName == "Петряшин Антон Вениаминович" }!!,
+                            teacher = teachers.find { it -> it.teacherName == "Терентьев Валентин Андреевич" }!!,
                             type = types.find { it -> it.type == "Лекция" }!!,
                             spot = spots.find { it -> it.spotName == "608-н.к." }!!)
             )
