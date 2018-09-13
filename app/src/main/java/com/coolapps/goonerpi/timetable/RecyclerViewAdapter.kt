@@ -7,12 +7,12 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import com.coolapps.goonerpi.timetable.model.Lesson
 import com.coolapps.goonerpi.timetable.utils.TeacherImageManager
 import kotlinx.android.synthetic.main.new_list_item.view.*
+
 
 class RecyclerViewAdapter(private val lessons: List<Lesson>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
@@ -58,28 +58,24 @@ class RecyclerViewAdapter(private val lessons: List<Lesson>) : RecyclerView.Adap
                 val snackView = mInflater.inflate(R.layout.popup_window, null)
 
                 val imageView = snackView.findViewById(R.id.teacher_photo) as ImageView
-                val textViewTop = snackView.findViewById(R.id.teacher_name) as TextView
-                val textViewBottom = snackView.findViewById(R.id.lesson_fullname) as TextView
-                val dismissButton = snackView.findViewById(R.id.dismissButton) as ImageButton
+                val teacherName = snackView.findViewById(R.id.teacher_name) as TextView
+                val lessonName = snackView.findViewById(R.id.lesson_fullname) as TextView
+                val lessonType = snackView.findViewById(R.id.lesson_type) as TextView
 
 
                 snackbar.addCallback(object : Snackbar.Callback() {
-
                     override fun onDismissed(snackbar: Snackbar?, event: Int) {
                         super.onDismissed(snackbar, event)
                         it.name.setTextColor(ContextCompat.getColor(it.context, R.color.colorPrimaryDark))
                     }
                 })
 
+                layout.setOnClickListener { snackbar.dismiss() }
 
-
-                dismissButton.setOnClickListener { snackbar.dismiss() }
-
-                //imageView.setImageBitmap(BitmapFactory.decodeResource(itemView.context.resources, R.drawable.ic_item_new))
-                textViewTop.text = lesson.teacher.teacherName
+                teacherName.text = lesson.teacher.teacherName
                 it.name.setTextColor(ContextCompat.getColor(it.context, R.color.colorAccent))
-                //  it.name.alpha = 1F
-                textViewBottom.text = lesson.name.lessonNameFull
+                lessonName.text = lesson.name.lessonNameFull
+                lessonType.text = lesson.type.type
 
                 TeacherImageManager.setImage(lesson, imageView)
 

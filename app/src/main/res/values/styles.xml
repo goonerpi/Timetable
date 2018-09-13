@@ -32,4 +32,10 @@
         <item name="android:title">@font/quicksand_regular</item>
     </style>
 
+    <style name="ripple">
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+        <item name="android:background">?android:attr/selectableItemBackground</item>
+    </style>
+
 </resources>
