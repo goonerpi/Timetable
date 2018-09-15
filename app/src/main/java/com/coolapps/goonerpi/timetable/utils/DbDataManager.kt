@@ -163,6 +163,13 @@ class DbDataManager {
 
             result[6] = listOf(
                     Lesson(
+                            name = lessons.find { it -> it.lessonNameShort == "ОПОИБ" }!!,
+                            timeStart = times.find { it -> it.time == "9:45" }!!,
+                            timeEnd = times.find { it -> it.time == "11:20" }!!,
+                            teacher = teachers.find { it -> it.teacherName == "Инюшкин Андрей Алексеевич" }!!,
+                            type = types.find { it -> it.type == "Практика" }!!,
+                            spot = spots.find { it -> it.spotName == "502-14" }!!),
+                    Lesson(
                             name = lessons.find { it -> it.lessonNameShort == "РЭЗАС" }!!,
                             timeStart = times.find { it -> it.time == "11:30" }!!,
                             timeEnd = times.find { it -> it.time == "13:05" }!!,

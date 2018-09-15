@@ -19,7 +19,7 @@ class StartItemManager {
             }
             return when(week.rem(2)){
                 0 -> d.rem(5)
-                else -> (d + 5).rem(5)
+                else -> (d + 5).rem(10)
             }
         }
     }
