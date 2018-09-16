@@ -15,11 +15,11 @@ class StartItemManager {
                 Calendar.WEDNESDAY -> 2
                 Calendar.THURSDAY -> 3
                 Calendar.FRIDAY -> 4
-                else -> 0
+                else -> 5
             }
-            return when(week.rem(2)){
-                0 -> d.rem(5)
-                else -> (d + 5).rem(10)
+            return when(week % 2){
+                0 -> (d + 5) % 10
+                else -> d
             }
         }
     }
